@@ -6,8 +6,14 @@ import re
 
 def load_data(messages_filepath, categories_filepath):
     '''
+    The function to load the data.
 
+    Parameters:
+        messages_filepath (text): The file path for the disaster messages dataset.
+        categories_filepath (text): The file path for the categories dataset.
 
+    Returns:
+        df (DataFrame): loaded DataFrame.
     '''
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
@@ -16,7 +22,15 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
+    '''
+    The function to clean the dataset.
 
+    Parameters:
+        df (DataFrame): The DataFrame.
+
+    Returns:
+        df (DataFrame): Cleaned DataFrame.
+    '''
     categories = pd.DataFrame(df['categories'].str.split(';', expand = True))
     row = categories.iloc[0]
     category_colnames = row.apply(lambda x:x[:-2])
@@ -29,18 +43,20 @@ def clean_data(df):
         # convert column from string to numeric
         categories[column] = categories[column].astype(np.int)
 
-
     df.drop('categories', axis=1, inplace=True)
-
     df = pd.concat([df,categories], axis=1, join_axes=[df.index])
-
-
     df.drop_duplicates(inplace=True)
 
     return df
 
 
 def save_data(df, database_filename):
+    '''
+    The function to save DataFrame to sql database.
+
+    Parameters:
+        df (DataFrame): Our DataFrame.
+    '''
     engine = create_engine('sqlite:///'+database_filename)
     df.to_sql('DisasterResponse', engine, index=False)
 

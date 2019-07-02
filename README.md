@@ -4,8 +4,8 @@ This project was completed as part of the course requirements of [Udacity's Data
 <li><a href="#Installation">Installation</a></li>
 <li><a href="#Project Motivation">Project Motivation</a></li>
 <li><a href="#File Descriptions">File Descriptions</a></li>
-<li><a href="#Instructions">Licensing</a></li>
-<li><a href="#Screenshots">Results</a></li>
+<li><a href="#Instructions">Instructions</a></li>
+<li><a href="#Screenshots">Screenshots</a></li>
 
 
 # Installation:

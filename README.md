@@ -27,6 +27,8 @@ This project is created to analyze disaster data from [Figure Eight](https://www
 3. app
     - run.py: Flask file to run the web application.
     - templates: Contains html file for the web applicatin.
+4. screenshot
+    - This folder contains screenshots of the web app. 
 
 # Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.

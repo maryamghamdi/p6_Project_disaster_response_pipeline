@@ -43,3 +43,4 @@ This project is created to analyze disaster data from [Figure Eight](https://www
 
 
 # Screenshots:
+![Homepage](screenshot/Homepage.png)
